@@ -101,3 +101,15 @@ Here is the proof that the application is successfully connected to and storing 
 
 **Payments Table:**
 ![PostgreSQL Payments Table](docs/screenshots/postgres-payments.png)
+
+### REST API Endpoints Evidence
+Here is the proof that the backend successfully implements the required REST API endpoints using Node.js and Express.js:
+
+**GET `/customers` (Retrieve loan details):**
+![GET Customers API](docs/screenshots/api-get-customers.png)
+
+**POST `/payments` (Make a payment):**
+![POST Payments API](docs/screenshots/api-post-payments.png)
+
+**GET `/payments/:account_number` (Payment history):**
+![GET Payment History API](docs/screenshots/api-get-history.png)
