@@ -1,0 +1,31 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Customer {
+  id             Int       @id @default(autoincrement())
+  account_number String    @unique @map("account_number")
+  issue_date     DateTime  @map("issue_date")
+  interest_rate  Float     @map("interest_rate")
+  tenure         Int       @map("tenure")
+  emi_due        Float     @map("emi_due")
+  payments       Payment[]
+
+  @@map("customers")
+}
+
+model Payment {
+  id             Int      @id @default(autoincrement())
+  customer_id    Int      @map("customer_id")
+  payment_date   DateTime @default(now()) @map("payment_date")
+  payment_amount Float    @map("payment_amount")
+  status         String   @map("status")
+  customer       Customer @relation(fields: [customer_id], references: [id], onDelete: Cascade)
+
+  @@map("payments")
+}
