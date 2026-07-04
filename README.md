@@ -86,7 +86,7 @@ This API is currently deployed live on a public AWS EC2 server. The deployment p
 4. **Code Retrieval:** The backend repository is cloned directly into `/home/ubuntu/app/payment-collection-backend`.
 5. **Install & Migrate:** `npm install` and `npx prisma db push` are executed to prepare the database.
 6. **PM2 Daemon:** The Express server is started using PM2 (`pm2 start src/server.js --name backend`) to ensure it runs continuously in the background.
-7. **Nginx Reverse Proxy:** Nginx is configured to listen on port 80 and forward `/api` requests to the local Node.js server running on port 5000.
+7. **Nginx Reverse Proxy:** Nginx is configured to listen on port 80 and forward API requests to the local Node.js server running on port 5000.
 8. **Live API URL:** `http://13.60.11.46/customers`
 
 ---
