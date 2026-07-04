@@ -88,3 +88,16 @@ This API is currently deployed live on a public AWS EC2 server. The deployment p
 6. **PM2 Daemon:** The Express server is started using PM2 (`pm2 start src/server.js --name backend`) to ensure it runs continuously in the background.
 7. **Nginx Reverse Proxy:** Nginx is configured to listen on port 80 and forward `/api` requests to the local Node.js server running on port 5000.
 8. **Live API URL:** `http://13.60.11.46/customers`
+
+---
+
+## 5. Screenshots
+
+### PostgreSQL Database Evidence
+Here is the proof that the application is successfully connected to and storing data inside a real PostgreSQL database on the AWS EC2 instance:
+
+**Customers Table:**
+![PostgreSQL Customers Table](docs/screenshots/postgres-customers.png)
+
+**Payments Table:**
+![PostgreSQL Payments Table](docs/screenshots/postgres-payments.png)
